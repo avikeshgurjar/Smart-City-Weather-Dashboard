@@ -34,11 +34,7 @@ function WeatherApp() {
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
       <div className="container">
-        <input 
-          type="text" 
-          id="searchInput" 
-          className="search-input"
-          placeholder="Enter city name..."/>
+        <input type="text" id="searchInput" className="search-input" placeholder="Enter city name..."/>
         <button  id="searchBtn"className="search-button" onClick={showWeather}>Search</button> </div>
       <div id="weatherResult" style={{ marginTop: "30px", fontSize: "24px", color: "white", fontWeight: "bold", textAlign: "center", minHeight: "30px" }}> </div>
     </div>
