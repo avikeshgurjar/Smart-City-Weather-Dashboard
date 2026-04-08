@@ -2,15 +2,31 @@ body {
     margin: 0;
     padding: 0;
     background-color: #92a9c2;
-    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: background 0.6s ease-in-out;
 }
 
 #root {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     width: 100vw;
     height: 100vh;
+}
+
+.weather-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .container {
@@ -18,11 +34,44 @@ body {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    margin-top: 50px;
     width: 100%;
-    max-width: 600px;
-    padding: 0 20px;
     box-sizing: border-box;
+}
+
+.weather-result {
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    min-height: 30px;
+}
+
+.weather-city {
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.weather-temp {
+    font-size: 56px;
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    margin-bottom: 18px;
+}
+
+.weather-advice {
+    font-size: 15px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 12px 18px;
+    line-height: 1.5;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .search-input {
@@ -42,15 +91,14 @@ body {
 
 .search-button {
     padding: 12px 24px;
-    font-size: 16px;
+    font-size: 16px;;
     border-radius: 8px;
     background-color: #007bff;
     color: white;
     border: none;
-    cursor: pointer;
-    box-sizing: border-box;
+    
     transition: background-color 0.2s ease, transform 0.1s ease;
-    white-space: nowrap; /* Prevent button text from breaking on tiny screens */
+    white-space: nowrap;
 }
 
 .search-button:hover {
@@ -61,12 +109,12 @@ body {
     transform: scale(0.98);
 }
 
-/* Responsive adjustment for small screens (Mobile Phones) */
 @media (max-width: 480px) {
     .search-container {
         flex-direction: column;
+        justify-content: center;
         align-items: stretch;
         gap: 10px;
-        margin-top: 30px; /* Slightly less margin on mobile */
+        margin-top: 30px;
     }
 }
