@@ -1,4 +1,4 @@
-body {
+body{
     margin: 0;
     padding: 0;
     background-color: #92a9c2;
@@ -8,7 +8,7 @@ body {
     transition: background 0.6s ease-in-out;
 }
 
-#root {
+#root{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +16,7 @@ body {
     height: 100vh;
 }
 
-.weather-wrapper {
+.weather{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +29,7 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-.container {
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,14 +38,14 @@ body {
     box-sizing: border-box;
 }
 
-.weather-result {
+.weather-result{
     margin-top: 30px;
     width: 100%;
     text-align: center;
     min-height: 30px;
 }
 
-.weather-city {
+.weather-city{
     font-size: 22px;
     color: rgba(255, 255, 255, 0.85);
     font-weight: 600;
@@ -54,7 +54,7 @@ body {
     margin-bottom: 6px;
 }
 
-.weather-temp {
+.weather-temp{
     font-size: 56px;
     font-weight: 800;
     color: white;
@@ -63,7 +63,7 @@ body {
     margin-bottom: 18px;
 }
 
-.weather-advice {
+.weather-advice{
     font-size: 15px;
     color: white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -72,9 +72,10 @@ body {
     line-height: 1.5;
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    color: black;
 }
 
-.search-input {
+.search-input{
     padding: 12px;
     font-size: 16px;
     border-radius: 8px;
@@ -85,11 +86,11 @@ body {
     transition: border-color 0.2s;
 }
 
-.search-input:focus {
+.search-input:focus{
     border-color: #007bff;
 }
 
-.search-button {
+.search-button{
     padding: 12px 24px;
     font-size: 16px;;
     border-radius: 8px;
@@ -101,20 +102,26 @@ body {
     white-space: nowrap;
 }
 
-.search-button:hover {
+.search-button:hover{
     background-color: #0056b3;
 }
 
-.search-button:active {
+.search-button:active{
     transform: scale(0.98);
 }
 
-@media (max-width: 480px) {
-    .search-container {
+@media (max-width: 480px){
+    .search-container{
         flex-direction: column;
         justify-content: center;
         align-items: stretch;
         gap: 10px;
         margin-top: 30px;
     }
+}
+.weather-advice{
+    text-decoration: solid;
+    color: black;
+    font-size: 20px;
+    
 }

@@ -8,13 +8,13 @@ async function getWeather(city){
   return await response.json();
 }
 
-function WeatherApp() {
+function WeatherApp(){
 
-  async function showWeather(){
+  async function showWeather() {
     const resultDiv = document.getElementById("weatherResult")
     const cityInput = document.getElementById('searchInput').value
 
-    if(!cityInput){
+    if (!cityInput){
       resultDiv.innerText = "Please enter a city name.";
       return
     }
@@ -30,21 +30,35 @@ function WeatherApp() {
 
       let advice = ""
 
-      if (condition.includes('rain') || condition.includes('drizzle') || rain > 0.2) {
+      if (condition.includes('rain') || rain > 0.2){
         advice = "Bring an umbrella ☂️."
-      } else if (condition.includes('snow')) {
+      }else if(condition.includes('snow')){
         advice = "Wear a winter coat 🧥."
-      }else if (temp >= 25){
-        advice = "Warm weather!"
-      }else {
-        advice = "Freezing cold!🧤."
+      }else if(temp>35) {
+        advice="wear light cloths and drink water!!"
+
+      }
+      else if(30>=temp > 25){
+        advice = "Warm weather not bad you can still enjoy!"
+      }else if (15<=temp<=25){
+        advice = "enjoy it's best weather for hangout!!😜🧤."
+      }else if (5<=temp<15){
+        advice="wear coat or jacket"
+      }else{
+        advice = "Wear a winter coat 🧥."
+
       }
 
       resultDiv.innerHTML = `
         <div class="weather-city">${weatherData.name}</div>
-        <div class="weather-temp">${temp.toFixed(1)}°C</div>
-        <div class="weather-advice">Advice: ${advice}</div>
-      `;
+        <div class="weather-temp">${temp}°C</div>
+        
+        <div class="weather-condition">${condition}</div>
+        <div class="weather-advice">
+          Advice: ${advice}
+        </div>
+       `
+
 
       document.body.style.backgroundImage = "none";
       if (temp >= 25) {
@@ -60,14 +74,16 @@ function WeatherApp() {
   }
 
   return (
-    <div className="weather-wrapper">
+    <div className="weather">
+      <h1 className="title">Weather App</h1>
       <div className="container">
-        <input type="text" id="searchInput" className="search-input" placeholder="Enter city name..."/>
+        
+        <input type="text" id="searchInput" className="search-input" placeholder="Enter city name..." />
         <button id="searchBtn" className="search-button" onClick={showWeather}>Search</button>
       </div>
       <div id="weatherResult" className="weather-result"></div>
+      
     </div>
-  )
+      )
 }
-
-createRoot(document.getElementById('root')).render(<WeatherApp />)
+      createRoot(document.getElementById('root')).render(<WeatherApp />)
