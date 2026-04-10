@@ -9,14 +9,17 @@ It was a fun little project to get my hands dirty with React fundamentals and fe
 - Uses real-time data from the OpenWeatherMap API.
 
 ## 🛠️ Tech Stack
-- **React** 
-- **Vanilla CSS** 
+- **HTML,CSS,JAVAScript**
+- **Reacy** 
 - **OpenWeatherMap API**
+
 
 
 
 ### the API link:
 - https://openweathermap.org/current
 
-
+### features:
+- background color change on the basis of temperature.
+- a advice shown on the ui on the basis of weather condition.
 
